@@ -9,9 +9,18 @@ uid = ("admin","adm!nd42")
 
 # Passing the Details of the building to add
 building = {"name" : "Elcamino-Drive-CA","address" : "84 Rac st","contact_name" : "Andrew", "contact_phone": "669546768", "notes": "Second site"}
-
-
 response=requests.request(method="post", url="https://192.168.0.148/api/1.0/buildings/", auth = uid, data = building, verify = False)
+print response
+
+
+# Passing the Details of the room to add
+room = {"name" : "Elcamino-Drive-CA","building_id" : "1"}
+response=requests.request(method="post", url="https://192.168.0.148/api/1.0/rooms/", auth = uid, data = building, verify = False)
+print response
+
+# Passing the Details of the rack to add
+rack = {"name" : "Elcamino-Drive-CA", "room_id" : "1", "size" :" "}
+response=requests.request(method="post", url="https://192.168.0.148/api/1.0/rooms/", auth = uid, data = building, verify = False)
 print response
 
 
@@ -19,3 +28,6 @@ print response
 id = ("1")
 response=requests.request(method="delete", url="https://192.168.0.149/api/1.0/buildings/1", auth = uid, data = id , verify = False)
 print response.text
+
+
+
